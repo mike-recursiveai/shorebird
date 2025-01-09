@@ -84,6 +84,15 @@ class PatchDiffChecker {
 If you don't know why you're seeing this error, visit our troubleshooting page at ${troubleshootingUrl.toLink()}'''),
         );
 
+      if (allowNativeChanges) {
+        logger.warn(
+          '''
+WARNING: Native changes detected and warning override is enabled
+   • Shorebird replaces Dart code but NOT native code
+   • This can lead to a confused state where Dart and native code are mismatched''',
+        );
+      }
+
       if (!allowNativeChanges) {
         if (!shorebirdEnv.canAcceptUserInput) {
           throw UnpatchableChangeException();
