@@ -87,11 +87,9 @@ If you don't know why you're seeing this error, visit our troubleshooting page a
       if (allowNativeChanges) {
         logger.warn(
           '''
-⚠️  WARNING: Native changes detected and warning override is enabled!
+WARNING: Native changes detected and warning override is enabled
    • Shorebird replaces Dart code but NOT native code
-   • This can lead to a confused state where Dart and native code are mismatched
-   • This is a common cause of problems during patching
-   • Consider releasing a full app update instead of a patch''',
+   • This can lead to a confused state where Dart and native code are mismatched''',
         );
       }
 
